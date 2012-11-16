@@ -15,11 +15,39 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
   </dependencies>
+
+	<build>
+		<plugins>
+		  <plugin>
+		    <artifactId>maven-assembly-plugin</artifactId>
+		    <configuration>
+		      <descriptorRefs>
+		        <descriptorRef>jar-with-dependencies</descriptorRef>
+		      </descriptorRefs>
+		      <archive>
+		        <manifest>
+		          <mainClass>cz.duga.hallogitworld.App</mainClass>
+		        </manifest>
+		      </archive>
+		    </configuration>
+		    <executions>
+		      <execution>
+		        <phase>package</phase>
+		        <goals>
+		          <goal>single</goal>
+		        </goals>
+		      </execution>
+		    </executions>
+		  </plugin>
+		</plugins>
+	</build>
+
+
 </project>
